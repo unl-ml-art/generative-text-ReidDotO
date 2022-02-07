@@ -1,12 +1,14 @@
 # Project 1 Generative Text
 
-Your Name, yourcontact@unl.edu
+Reid Brockmeier, rbrockmeier2@unl.edu
 
 (Your teammate's contact info, if appropriate)
 
 ## Abstract
 
 Include your abstract here. This should be one paragraph clearly describing your concept, method, and results. This should tell us what architecture/approach you used. Also describe your creative goals, and whether you were successful in achieving them. Also could describe future directions.
+
+For this project, I will make a YouTube video based on a generated title. For the data to train from, I will compile a large list of titles of popular videos, including all from the trending tab and other large creators. If the amount of text I am able to gather is not enough to provide reasonable outputs, I would consider using the descriptions of the videos as well. With this, I expect to get a variety of interesting titles that are proven to catch the viewers' attention and get a large number of views. I will pick a title that provides a feasable concept for a video and actually make and upload it to YouTube to see how well the result performs. The title may end up not being exactly representative of the video, but it will be interesting to see how much of an impact the title has, especially when it is derived directly from the most popular videos on YouTube.
 
 ## Model/Data
 
