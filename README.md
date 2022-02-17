@@ -2,8 +2,6 @@
 
 Reid Brockmeier, rbrockmeier2@unl.edu
 
-(Your teammate's contact info, if appropriate)
-
 ## Abstract
 
 Include your abstract here. This should be one paragraph clearly describing your concept, method, and results. This should tell us what architecture/approach you used. Also describe your creative goals, and whether you were successful in achieving them. Also could describe future directions.
@@ -19,12 +17,15 @@ Briefly describe the files that are included with your repository:
 ## Code
 
 Your code for generating your project:
+- gpt2-generate-finetune.ipynb
 - training_code.py or training_code.ipynb - your training code
 - generative_code.py or generative_code.ipynb - your generation code
 
 ## Results
 
 - Documentation of your generative text in an effective form. A file with your generated text (.pdf, .doc, .txt). 
+
+- Talk about my different results
 
 ## Technical Notes
 
@@ -39,3 +40,4 @@ References to any papers, techniques, repositories you used:
   - [This is a paper](this_is_the_link.pdf)
 - Repositories
 - Blog posts
+
