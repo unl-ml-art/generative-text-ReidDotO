@@ -11,15 +11,21 @@ For this project, I will make a YouTube video based on a generated title. For th
 ## Model/Data
 
 Briefly describe the files that are included with your repository:
-- trained models
-- training data (or link to training data). what is your corpus?
 
-The training data was collected from the titles of all videos from a list of channels that I chose specifically using minimaxir's youtube video scraper repository. Slight modifications were made, such as a few lines to create a txt file from the csv in order to be used as training data.
+Trained models:
 
-Minimaxir's Repository:
-- [YouTube Video Scraper](https://github.com/minimaxir/youtube-video-scraper)
+Training Data:
 
-The channels chosen were all gaming-related and consist of many of the top channels on the site and some that I would like to emulate.
+- The training data was collected from the titles of all videos from a list of channels that I chose specifically using minimaxir's youtube video scraper repository. Slight modifications were made, such as a few lines to create a txt file from the csv in order to be used as training data.
+
+     - Minimaxir's Repository:
+         - [YouTube Video Scraper](https://github.com/minimaxir/youtube-video-scraper)
+
+
+- The channels chosen were all gaming-related and consist of many of the top channels on the site and some that I would like to emulate.
+
+    - List of over 63,000 titles:
+        - [titles.txt](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/titles.txt)
 
 ## Code
 
@@ -39,9 +45,16 @@ Text Generation Code:
 
 ## Technical Notes
 
-Any implementation details or notes we need to repeat your work. 
-- Does this code require other pip packages, software, etc?
-- Does it run on some other (non-datahub) platform? (CoLab, etc.)
+It is possible to recreate this with different channels' videos used as the training data:
+- To do this, you need your own API Key for the YouTube Data v3 API. 
+    - Refer to: [README-SCRAPER.md](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/README-SCRAPER.md)
+- Change the [config.yml](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/config.yml) file with your desired YouTube channel ID's
+- Add a data folder within the video-scraper directory.
+- Run [youtube_video_scraper.py](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/youtube_video_scraper.py)
+    - In command line: "python youtube_video_scraper.py"
+- Run [youtube_video_titles.py](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/youtube_video_titles.py)
+    - In command line: "python youtube_video_titles.py"
+- This will create "titles.csv" and "titles.txt" The txt file will be used later in the text generation.
 
 ## Reference
 
