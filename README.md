@@ -2,19 +2,14 @@
 
 Reid Brockmeier, rbrockmeier2@unl.edu
 
+Result video: [Pokemon, but you cannot see them, they are invisible!](https://www.youtube.com/watch?v=x1_liPYByMQ)
+
 ## Abstract
 
-Include your abstract here. This should be one paragraph clearly describing your concept, method, and results. This should tell us what architecture/approach you used. Also describe your creative goals, and whether you were successful in achieving them. Also could describe future directions.
 
-For this project, I will make a YouTube video based on a generated title. For the data to train from, I will compile a large list of titles of popular videos, including all from the trending tab and other large creators. If the amount of text I am able to gather is not enough to provide reasonable outputs, I would consider using the descriptions of the videos as well. With this, I expect to get a variety of interesting titles that are proven to catch the viewers' attention and get a large number of views. I will pick a title that provides a feasable concept for a video and actually make and upload it to YouTube to see how well the result performs. The title may end up not being exactly representative of the video, but it will be interesting to see how much of an impact the title has, especially when it is derived directly from the most popular videos on YouTube.
+The original concept for this project was to gather a list of the most popular/trending videos on YouTube and use it as training data to generate YouTube video titles in order to solve the algorithm in a way. To prove this concept, I planned to create a video based on this generated title. While gathering the data, the source of it changed a bit. I discovered a repository to scrape all the titles from a list of channels, and with this I was able to hand pick channels that went more with my category of video creation. The goal of the project also shifted from generating a title that will perform well to using it as a tool for generating video ideas. I modified the video-scraper a bit and provided a list of channels that I wanted to emulate. I ran 2 python scripts to produce a txt file with over 45,000 titles. This list was used as training data to create a GPT-2 model that generates titles. This was implemented within a version of the class example GPT-2 notebook that had modified parameters and some removed cells. I specified a prefix of "Pokemon, but" to produce Pokemon challenge ideas because that is most of what I post on my channel. A list of 100 titles with this prefix was generated. These titles were, for the most part, coherent and usable. I chose the second one, being, "Pokemon, but you cannot see them, they are invisible!" With the title, I created a custom ROM of Pokemon FireRed and played through it as a challenge. This was streamed and edited into a 20 minute YouTube video. As of the first 11 hours of being live on YouTube, the video is performing quite a bit worse than the average does on my channel, but high video performance is no longer the goal. I am glad that with the shifted data source, my goal for this project shifted as well. It would be unrealistic to expect good performance on a video just based on a title because many other factors play a large role in the YouTube algorithm. This alleviates the stress that my human error would inevitably cause. I feel that this project was a success in the fact that this could genuinely be used as a tool for video concepts. It is not exclusive to creating Pokemon titles; simply adjusting the prefix would produce an entirely different list. I am very happy with how this project turned out, and I will likely refer back to the list produced and generate more in the future.
 
 ## Model/Data
-
-Briefly describe the files that are included with your repository:
-
-Trained models:
-- The model was trained with the [titles.txt](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/titles.txt) file
-- Mostly default values were used and it ran 1 run with 200 steps total. This was all that was necessary for the fairly large training data that was used.
 
 Training Data:
 
@@ -29,25 +24,47 @@ Training Data:
 - The code to produce this is included in [video-scraper](https://github.com/unl-ml-art/generative-text-ReidDotO/tree/master/video-scraper)
 
     - List of over 46,000 titles:
-        - [titles.txt](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/titles.txt)
+        - [titles.txt](titles.txt)
+
+Trained models:
+- I was unable to get the trained model to push to git, it kept having errors while pushing. (could be due to the large file sizes)
+
+
+- Process and results from training/generating are documented within:
+    - [gpt2-generate-finetune.ipynb](gpt2-generate-finetune.ipynb)
+
+
+- The model was trained with the [titles.txt](titles.txt) file.
+
+
+- Mostly default values were used and it ran 1 run with 200 steps total. This was all that was necessary for the fairly large training data that was used.
 
 ## Code
 
 Training Data Code:
-- [youtube_video_scraper.py](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/youtube_video_scraper.py)
-- [youtube_video_titles.py](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/youtube_video_titles.py)
-- [config.yml](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/config.yml)
+- [video-scraper](https://github.com/unl-ml-art/generative-text-ReidDotO/tree/master/video-scraper)
+
 
 Text Generation Code:
 - [gpt2-generate-finetune.ipynb](gpt2-generate-finetune.ipynb)
 
 ## Results
 
-- Documentation of your generative text in an effective form. A file with your generated text (.pdf, .doc, .txt). 
+- File containing 100 different generated titles:
+    - [output_20220219_202058.txt](output_20220219_202058.txt) 
 
-- Talk about my different results
 
-- File containing 100 different generated titles: 
+- The results were on a wide variety of games/topics. It is for this reason that I chose a small length and large sample size. This way it provided many titles with my desired prefix.
+
+
+- Chosen Title
+    - "Pokemon, but you cannot see them, they are invisible!"
+        - This was the second result using the prefix, "Pokemon, but"
+        - Chosen because it provided an interesting concept that was feasible. 
+
+         
+Finished YouTube Video:
+- [Pokemon, but you cannot see them, they are invisible!](https://www.youtube.com/watch?v=x1_liPYByMQ)
 
 ## Technical Notes
 
@@ -62,14 +79,34 @@ It is possible to recreate this with different channels' videos used as the trai
     - In command line: "python youtube_video_titles.py"
 - This will create "titles.csv" and "titles.txt" The txt file will be used later in the text generation.
 
+To train and generate titles in the same manner, run each cell from the beginning of:
+- [gpt2-generate-finetune.ipynb](gpt2-generate-finetune.ipynb)
+
+Notes on video creation process:
+- I had to create my own ROM Hack of a Pokemon game (FireRed) in order to do the challenge provided by the generated title.
+    - I created my own custom sprite (image of pokemon used in-game) to replace each existing one. It had to be an indexed image 64x64 pixels with less than 16 colors. I made some slightly different colored dots scattered around.
+    - I used a ROM hacking tool called [unLZ-GBA](https://www.romhacking.net/utilities/362/) to replace the different sprites.
+        - This was a very long and dull process; I had to replace over 800 images with the app.
+
+
+- To block out the pokemon names, rather than implementing it within the ROM, I made a group of images to cover the menuing and names that displayed in OBS. I played viewing the OBS scene projection and manually turned the overlay on/off with a hotkey each time I was in battle.
+
+
+- I streamed the process of creating the ROM and playthrough on my Twitch channel: [ReidDotO](https://www.twitch.tv/ReidDotO)
+    - [Creation VOD](https://www.twitch.tv/videos/1303767712)
+    - [Gameplay VOD 1](https://www.twitch.tv/videos/1304016040)
+    - [Gameplay VOD 2](https://www.twitch.tv/videos/1304712647)
+
+
+- The gameplay took just over 12 hours to complete, and the editing process was about 8 hours.
+
 ## Reference
 
-References to any papers, techniques, repositories you used:
-- Papers
-  - [This is a paper](this_is_the_link.pdf)
 - Repositories
     - [YouTube Video Scraper](https://github.com/minimaxir/youtube-video-scraper)
     - [GPT-2 Text Generation (in-class example)](https://github.com/roberttwomey/ml-art-code)
+
+
 - YouTube Channels
     - [PewDiePie](https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw)
     - [Markiplier](https://www.youtube.com/channel/UC7_YxT-KID8kRbqZo7MyscQ)
@@ -97,3 +134,8 @@ References to any papers, techniques, repositories you used:
     - [FaZe Jev](https://www.youtube.com/channel/UC7trU46U_9XPDtMnDbiDPUQ)
     - [VanossGaming](https://www.youtube.com/channel/UCKqH_9mk1waLgBiL2vT5b9g)
     - [LazarBeam](https://www.youtube.com/channel/UCw1SQ6QRRtfAhrN_cjkrOgA)
+
+
+- Other Tools:
+    - [unLZ-GBA](https://www.romhacking.net/utilities/362/)
+    - [Custom Sprite How to](https://www.pokecommunity.com/showthread.php?t=208837)
