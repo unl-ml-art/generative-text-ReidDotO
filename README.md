@@ -24,7 +24,7 @@ Training Data:
 
 - The channels chosen were all gaming-related and consist of many of the top channels on the site and some that I would like to emulate.
 
-    - List of over 63,000 titles:
+    - List of over 46,000 titles:
         - [titles.txt](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/titles.txt)
 
 ## Code
@@ -72,7 +72,6 @@ References to any papers, techniques, repositories you used:
     - [WILDCAT](https://www.youtube.com/channel/UC-kOXc3gBwksVfmndSEz7jg)
     - [Ludwig](https://www.youtube.com/channel/UCrPseYLGpNygVi34QpGNqpA)
     - [SmallAnt](https://www.youtube.com/channel/UC0VVYtw21rg2cokUystu2Dw)
-    - [Northernlion](https://www.youtube.com/channel/UC3tNpTOHsTnkmbwztCs30sA)
     - [Dream](https://www.youtube.com/channel/UCTkXRDQl0luXxVQrRQvWS6w)
     - [jacksepticeye](https://www.youtube.com/channel/UCYzPXprvl5Y-Sf0g4vX-m6g)
     - [DanTDM](https://www.youtube.com/channel/UCS5Oz6CHmeoF7vSad0qqXfw)
