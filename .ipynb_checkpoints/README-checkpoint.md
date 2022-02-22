@@ -13,6 +13,8 @@ For this project, I will make a YouTube video based on a generated title. For th
 Briefly describe the files that are included with your repository:
 
 Trained models:
+- The model was trained with the [titles.txt](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/titles.txt) file
+- Mostly default values were used and it ran 1 run with 200 steps total. This was all that was necessary for the fairly large training data that was used.
 
 Training Data:
 
@@ -22,7 +24,9 @@ Training Data:
          - [YouTube Video Scraper](https://github.com/minimaxir/youtube-video-scraper)
 
 
-- The channels chosen were all gaming-related and consist of many of the top channels on the site and some that I would like to emulate.
+- The channels chosen were all gaming-related and consist of many of the top channels on the site and some that I would like to emulate. This text contained 717405 tokens.
+
+- The code to produce this is included in [video-scraper](https://github.com/unl-ml-art/generative-text-ReidDotO/tree/master/video-scraper)
 
     - List of over 46,000 titles:
         - [titles.txt](https://github.com/unl-ml-art/generative-text-ReidDotO/blob/master/video-scraper/titles.txt)
@@ -42,6 +46,8 @@ Text Generation Code:
 - Documentation of your generative text in an effective form. A file with your generated text (.pdf, .doc, .txt). 
 
 - Talk about my different results
+
+- File containing 100 different generated titles: 
 
 ## Technical Notes
 
